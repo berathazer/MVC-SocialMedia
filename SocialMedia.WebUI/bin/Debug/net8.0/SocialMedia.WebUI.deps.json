@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SocialMedia.WebUI/1.0.0": {
+        "runtime": {
+          "SocialMedia.WebUI.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SocialMedia.WebUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
