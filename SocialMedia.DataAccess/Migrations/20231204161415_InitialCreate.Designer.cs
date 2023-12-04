@@ -12,8 +12,8 @@ using SocialMedia.DataAccess;
 namespace SocialMedia.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231204154417_InitialDb")]
-    partial class InitialDb
+    [Migration("20231204161415_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -210,9 +210,9 @@ namespace SocialMedia.DataAccess.Migrations
                         .HasForeignKey("RepostID");
 
                     b.HasOne("SocialMedia.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Comments")
                         .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Post");
@@ -246,15 +246,15 @@ namespace SocialMedia.DataAccess.Migrations
             modelBuilder.Entity("SocialMedia.Entities.Like", b =>
                 {
                     b.HasOne("SocialMedia.Entities.Post", "Post")
-                        .WithMany()
+                        .WithMany("Likes")
                         .HasForeignKey("PostID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("SocialMedia.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Likes")
                         .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Post");
@@ -282,9 +282,9 @@ namespace SocialMedia.DataAccess.Migrations
                         .IsRequired();
 
                     b.HasOne("SocialMedia.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Reposts")
                         .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("OriginalPost");
@@ -296,6 +296,8 @@ namespace SocialMedia.DataAccess.Migrations
                 {
                     b.Navigation("Comments");
 
+                    b.Navigation("Likes");
+
                     b.Navigation("Reposts");
                 });
 
@@ -306,9 +308,15 @@ namespace SocialMedia.DataAccess.Migrations
 
             modelBuilder.Entity("SocialMedia.Entities.User", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("Followers");
 
+                    b.Navigation("Likes");
+
                     b.Navigation("Posts");
+
+                    b.Navigation("Reposts");
                 });
 #pragma warning restore 612, 618
         }

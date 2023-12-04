@@ -207,9 +207,9 @@ namespace SocialMedia.DataAccess.Migrations
                         .HasForeignKey("RepostID");
 
                     b.HasOne("SocialMedia.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Comments")
                         .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Post");
@@ -245,13 +245,13 @@ namespace SocialMedia.DataAccess.Migrations
                     b.HasOne("SocialMedia.Entities.Post", "Post")
                         .WithMany("Likes")
                         .HasForeignKey("PostID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("SocialMedia.Entities.User", "User")
                         .WithMany("Likes")
                         .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Post");
@@ -279,9 +279,9 @@ namespace SocialMedia.DataAccess.Migrations
                         .IsRequired();
 
                     b.HasOne("SocialMedia.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Reposts")
                         .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("OriginalPost");
@@ -305,11 +305,15 @@ namespace SocialMedia.DataAccess.Migrations
 
             modelBuilder.Entity("SocialMedia.Entities.User", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("Followers");
 
                     b.Navigation("Likes");
 
                     b.Navigation("Posts");
+
+                    b.Navigation("Reposts");
                 });
 #pragma warning restore 612, 618
         }

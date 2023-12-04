@@ -37,6 +37,20 @@ namespace SocialMedia.DataAccess
                 .WithMany(p => p.Likes)
                 .HasForeignKey(l => l.PostID)
                 .OnDelete(DeleteBehavior.NoAction);
+
+
+            modelBuilder.Entity<Repost>()
+                    .HasOne(r => r.User)
+                    .WithMany(u => u.Reposts)
+                    .HasForeignKey(r => r.UserID)
+                    .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Comment>()
+                .HasOne(c => c.User)
+                .WithMany(u => u.Comments)
+                .HasForeignKey(c => c.UserID)
+                .OnDelete(DeleteBehavior.NoAction);
+
         }
 
 

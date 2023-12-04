@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SocialMedia.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialDb : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -96,14 +96,12 @@ namespace SocialMedia.DataAccess.Migrations
                         name: "FK_Likes_Posts_PostID",
                         column: x => x.PostID,
                         principalTable: "Posts",
-                        principalColumn: "PostID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "PostID");
                     table.ForeignKey(
                         name: "FK_Likes_Users_UserID",
                         column: x => x.UserID,
                         principalTable: "Users",
-                        principalColumn: "UserID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "UserID");
                 });
 
             migrationBuilder.CreateTable(
@@ -128,8 +126,7 @@ namespace SocialMedia.DataAccess.Migrations
                         name: "FK_Reposts_Users_UserID",
                         column: x => x.UserID,
                         principalTable: "Users",
-                        principalColumn: "UserID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "UserID");
                 });
 
             migrationBuilder.CreateTable(
@@ -161,8 +158,7 @@ namespace SocialMedia.DataAccess.Migrations
                         name: "FK_Comments_Users_UserID",
                         column: x => x.UserID,
                         principalTable: "Users",
-                        principalColumn: "UserID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "UserID");
                 });
 
             migrationBuilder.CreateIndex(
