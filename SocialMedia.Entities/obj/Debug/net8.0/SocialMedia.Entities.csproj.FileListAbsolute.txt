@@ -1,0 +1,13 @@
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Entities\bin\Debug\net8.0\SocialMedia.Entities.deps.json
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Entities\bin\Debug\net8.0\SocialMedia.Entities.dll
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Entities\bin\Debug\net8.0\SocialMedia.Entities.pdb
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Entities\obj\Debug\net8.0\SocialMedia.Entities.csproj.AssemblyReference.cache
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Entities\obj\Debug\net8.0\SocialMedia.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Entities\obj\Debug\net8.0\SocialMedia.Entities.AssemblyInfoInputs.cache
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Entities\obj\Debug\net8.0\SocialMedia.Entities.AssemblyInfo.cs
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Entities\obj\Debug\net8.0\SocialMedia.Entities.csproj.CoreCompileInputs.cache
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Entities\obj\Debug\net8.0\SocialMedia.Entities.sourcelink.json
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Entities\obj\Debug\net8.0\SocialMedia.Entities.dll
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Entities\obj\Debug\net8.0\refint\SocialMedia.Entities.dll
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Entities\obj\Debug\net8.0\SocialMedia.Entities.pdb
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Entities\obj\Debug\net8.0\ref\SocialMedia.Entities.dll
