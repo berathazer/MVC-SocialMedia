@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D3WQs8hib5J65d0HpTHmKVTpWQ4A63WDecCVgjAwPVJd9vAFy91bXHiXxy35D9hhIVXFosKO1VkSDQAUhcDZZg==",
+  "dgSpecHash": "9qE4Oh5oMk5M/cWg7lWS9bqkadNJXTA7XOV66qQKdZcCuEndweuLjBTebCaaIIA0K9fnLtFKvuA1vhDemSLY8g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.WebUI\\SocialMedia.WebUI.csproj",
+  "projectFilePath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\berat\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.0\\microsoft.entityframeworkcore.8.0.0.nupkg.sha512",
     "C:\\Users\\berat\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.0\\microsoft.entityframeworkcore.abstractions.8.0.0.nupkg.sha512",
