@@ -1,4 +1,4 @@
-using SocialMedia.WebUI.Controllers;
+using SocialMedia.Entities;
 
 namespace SocialMedia.WebUI.Models
 {

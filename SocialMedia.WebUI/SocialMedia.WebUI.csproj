@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SocialMedia.Entities\SocialMedia.Entities.csproj" />
     <ProjectReference Include="..\SocialMedia.DataAccess\SocialMedia.DataAccess.csproj" />
+    <ProjectReference Include="..\SocialMedia.Business\SocialMedia.Business.csproj" />
   </ItemGroup>
 
   <ItemGroup>

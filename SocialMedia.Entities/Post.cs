@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SocialMedia.Entities
 {
@@ -11,7 +12,9 @@ namespace SocialMedia.Entities
 
         [Key]
         public Guid PostID { get; set; }
-        public Guid UserID { get; set; }
+
+        [Required]
+        public required Guid UserID { get; set; }
 
         [Required(ErrorMessage = "PostContent alanı zorunludur.")]
         public required string PostContent { get; set; }
@@ -21,7 +24,7 @@ namespace SocialMedia.Entities
         public DateTimeOffset PostDate { get; set; }
 
         // postu paylaşan useri gösterir.
-        public required User User { get; set; }
+        public User? User { get; set; }
 
         // postun yorumlarını gösterir.
         public List<Comment>? Comments { get; set; }

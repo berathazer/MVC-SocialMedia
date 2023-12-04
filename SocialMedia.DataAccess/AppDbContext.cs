@@ -14,6 +14,14 @@ namespace SocialMedia.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            //usera default olarak createdAt ve updatedAt alanlarını atadık.
+            modelBuilder.Entity<User>().Property(u => u.CreatedAt).HasDefaultValueSql("GETDATE()");
+            modelBuilder.Entity<User>().Property(u => u.UpdatedAt).HasDefaultValueSql("GETDATE()");
+
+
+
+            //altta eklediğim alanlar ilişkilerden birinin silinmesinden sonra bir cycle oluşmasını engellemek için.
             modelBuilder.Entity<Follower>()
                 .HasOne(f => f.FollowerUser)
                 .WithMany(u => u.Followers)

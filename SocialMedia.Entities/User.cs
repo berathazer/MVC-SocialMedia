@@ -23,6 +23,9 @@ namespace SocialMedia.Entities
         [Required(ErrorMessage = "Password alanı zorunludur.")]
         public required string Password { get; set; }
 
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+
         //kullanıcının takipçilerini gösterir
         public List<Follower>? Followers { get; set; }
 

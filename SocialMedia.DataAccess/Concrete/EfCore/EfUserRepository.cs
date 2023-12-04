@@ -7,6 +7,7 @@ namespace SocialMedia.DataAccess.Concrete
 {
     public class EfUserRepository : IUserRepository
     {
+
         public bool Create(User entity)
         {
             throw new NotImplementedException();
@@ -23,7 +24,9 @@ namespace SocialMedia.DataAccess.Concrete
 
         public List<User> GetAll()
         {
-            throw new NotImplementedException();
+            using(var context = new AppDbContext()){
+                return context.Users.ToList();
+            }
         }
 
         public User GetById(Guid id)
