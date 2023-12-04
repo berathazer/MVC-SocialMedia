@@ -28,5 +28,12 @@ namespace SocialMedia.Entities
 
         //kullanıcının postlarını gösterir
         public List<Post>? Posts { get; set; }
+
+        //kullanıcının beğenileri
+        public List<Like>? Likes { get; set; }
+
+        public List<Repost>? Reposts { get; set; }
+
+        public List<Comment>? Comments { get; set; }
     }
 }

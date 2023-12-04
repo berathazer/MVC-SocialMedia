@@ -27,5 +27,8 @@ namespace SocialMedia.Entities
         public List<Comment>? Comments { get; set; }
         // postu alıntı yapan kişileri gösterir.
         public List<Follower>? Reposts { get; set; }
+
+        //postun beğenileri
+        public List<Like>? Likes { get; set; }
     }
 }
