@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SocialMedia.Entities
 {
@@ -8,7 +9,7 @@ namespace SocialMedia.Entities
         {
             FollowDate = DateTimeOffset.Now;
         }
-        [Key]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid FollowerID { get; set; }
         [Required]
         public required Guid FollowerUserID { get; set; }

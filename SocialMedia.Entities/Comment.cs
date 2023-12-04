@@ -1,10 +1,11 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SocialMedia.Entities
 {
     public class Comment
     {
-        [Key]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid CommentID { get; set; }
         [Required]
         public required Guid PostID { get; set; }

@@ -3,11 +3,11 @@ using SocialMedia.Entities;
 
 namespace SocialMedia.DataAccess.Abstract
 {
-    public interface IUserRepository:IRepository<User>
+    public interface IUserRepository : IRepository<User>
     {
-      
-        User GetUserByEmailOrUsername(string credential);
 
-    
+        Task<User> GetUserByEmailOrUsername(string credential);
+
+
     }
 }

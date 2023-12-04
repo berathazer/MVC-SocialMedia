@@ -10,7 +10,7 @@ namespace SocialMedia.Entities
             PostDate = DateTimeOffset.Now;
         }
 
-        [Key]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid PostID { get; set; }
 
         [Required]

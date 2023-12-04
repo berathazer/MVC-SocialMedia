@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
 namespace SocialMedia.Entities
@@ -7,7 +8,7 @@ namespace SocialMedia.Entities
     [Index(nameof(Username), IsUnique = true)]
     public class User
     {
-        [Key]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid UserID { get; set; }
 
         [Required(ErrorMessage = "FullName alanı zorunludur.")]

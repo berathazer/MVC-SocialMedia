@@ -6,11 +6,11 @@ namespace SocialMedia.DataAccess.Abstract
 
         List<T> GetAll();
 
-        bool Create(T entity);
+        Task<bool> Create(T entity);
 
         bool Delete(Guid id);
 
-        T Update(T entity);
+        Task<T?> Update(T entity);
 
     }
 }

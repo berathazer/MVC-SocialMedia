@@ -11,13 +11,14 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
 
         public static async Task Seed()
         {
-            Console.WriteLine(Likes[0].UserID);
-
+            Like? _likes = null;
 
             var context = new AppDbContext();
-     
+
             if (context.Database.GetPendingMigrations().Count() == 0)
             {
+
+
 
                 if (context.Users.Count() == 0)
                 {
@@ -37,6 +38,8 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
                 if (context.Likes.Count() == 0)
                 {
                     await context.Likes.AddRangeAsync(Likes);
+
+
                 }
 
                 if (context.Followers.Count() == 0)
@@ -55,7 +58,6 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
                     await context.Comments.AddAsync(
                         new Comment()
                         {
-                            CommentID = Guid.NewGuid(),
                             CommentText = "ooo ilk mesajı atmayan adam adammıdır.",
                             UserID = Users[1].UserID,
                             PostID = Posts[0].PostID
@@ -63,7 +65,11 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
                     );
                 }
 
+
+
                 await context.SaveChangesAsync();
+                _likes = await context.Likes.FirstOrDefaultAsync(u => u.UserID != Guid.NewGuid());
+                Console.WriteLine(_likes?.UserID);
                 Console.WriteLine("Database seed successfully.");
 
             }
@@ -71,7 +77,7 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
 
         private static User[] Users = {
             new User(){
-                UserID = Guid.NewGuid(),
+
                 FullName= "Berat Hazer",
                 Username="berathazer",
                 Email="berathazer371@gmail.com",
@@ -79,14 +85,14 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
 
             },
             new User(){
-                UserID = Guid.NewGuid(),
+
                 FullName= "Burcu Gül",
                 Username="bgul10",
                 Email="bgul@gmail.com",
                 Password= "Some hashed passwordasd",
             },
             new User(){
-                UserID = Guid.NewGuid(),
+
                 FullName= "Ahmet Tatyüz",
                 Username="ahmetti",
                 Email="ahmt@gmail.com",
@@ -97,22 +103,22 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
 
         private static Post[] Posts = {
             new Post(){
-                PostID= Guid.NewGuid(),
+
                 PostContent="Bu bir deneme postudur",
                 UserID=Users[0].UserID
             },
             new Post(){
-                PostID= Guid.NewGuid(),
+
                 PostContent="Bberatag ahsdhu bir deneme postudur",
                 UserID=Users[0].UserID
             },
             new Post(){
-                PostID= Guid.NewGuid(),
+
                 PostContent="Burcu ahsdhu bir deneme postudur",
                 UserID=Users[1].UserID
             },
             new Post(){
-                PostID= Guid.NewGuid(),
+
                 PostContent="Burcununasfd ahsdhu bir deneme postudur",
                 UserID=Users[0].UserID
             }
@@ -120,12 +126,12 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
 
         private static Repost[] Reposts ={
               new Repost(){
-                    RepostID=  Guid.NewGuid(),
+
                     OriginalPostID = Posts[0].PostID,
                     UserID=Users[2].UserID
                 },
             new Repost(){
-                    RepostID =  Guid.NewGuid(),
+
                     OriginalPostID = Posts[1].PostID,
                     UserID=Users[2].UserID
                 }
@@ -134,17 +140,19 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
         private static Like[] Likes = {
              new Like()
                 {
-                    LikeID =  Guid.NewGuid(),
+
                     UserID = Users[2].UserID,
                     PostID = Posts[0].PostID
                 },
             new Like()
                 {
-                    LikeID = Guid.NewGuid(),
+
                     UserID = Users[1].UserID,
                     PostID = Posts[0].PostID
                 }
     };
+
+
 
 
     }
