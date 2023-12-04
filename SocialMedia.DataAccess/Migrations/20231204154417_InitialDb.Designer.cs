@@ -12,7 +12,7 @@ using SocialMedia.DataAccess;
 namespace SocialMedia.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231204151857_InitialDb")]
+    [Migration("20231204154417_InitialDb")]
     partial class InitialDb
     {
         /// <inheritdoc />

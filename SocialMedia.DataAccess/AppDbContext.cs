@@ -25,6 +25,18 @@ namespace SocialMedia.DataAccess
                 .WithMany()  // FollowingUser için WithMany çağrısını boş bırakarak, ilişkiyi yalnızca bir yönlü yapar
                 .HasForeignKey(f => f.FollowingUserID)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Like>()
+                .HasOne(l => l.User)
+                .WithMany(u => u.Likes)
+                .HasForeignKey(l => l.UserID)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Like>()
+                .HasOne(l => l.Post)
+                .WithMany(p => p.Likes)
+                .HasForeignKey(l => l.PostID)
+                .OnDelete(DeleteBehavior.NoAction);
         }
 
 
