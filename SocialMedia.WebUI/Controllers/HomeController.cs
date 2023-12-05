@@ -1,11 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
-using SocialMedia.WebUI.Models;
-using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
+using SocialMedia.DataAccess;
 
 namespace SocialMedia.WebUI.Controllers
 {
     public class HomeController : Controller
     {
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -13,9 +14,21 @@ namespace SocialMedia.WebUI.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()                                          
+        public IActionResult Index()
         {
-            return View();
+            using (var db = new AppDbContext())
+            {
+                var _posts = db.Posts
+                .Include(p => p.User)
+                .Include(p => p.Likes)
+                .Include(p => p.Comments)
+                .ToList();
+                ViewBag.posts = _posts;
+
+                Console.WriteLine("---------" + _posts.Count() + "-----------");
+                return View();
+            }
+
         }
 
         public IActionResult Privacy()

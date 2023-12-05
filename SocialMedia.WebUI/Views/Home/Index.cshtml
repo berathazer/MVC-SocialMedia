@@ -2,7 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="py-4 container bg-light ">
+    <div class="row justify-content-md-center">
+
+        <div class="col 12 col-md-9 justify-content-md-center gap-4" style="width: 470px;">
+            <div class="d-flex flex-column gap-3" data-html="true">
+                @foreach (var post in ViewBag.posts)
+                {
+                    Console.WriteLine(post.PostContent); // Veya diğer post özellikleri
+                    await Html.RenderPartialAsync("../Shared/Components/_PostCard.cshtml", post, ViewData);
+                }
+            </div>
+        </div>
+
+
+        <div class="col-md-3 d-none d-md-block">
+
+
+        </div>
+    </div>
 </div>

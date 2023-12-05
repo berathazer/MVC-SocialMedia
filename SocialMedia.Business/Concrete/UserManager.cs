@@ -16,7 +16,8 @@ namespace SocialMedia.Business.Concrete
         {
             _userRepository = userRepository;
         }
-        public bool Create(User entity)
+
+        public Task<bool> Create(User entity)
         {
             throw new NotImplementedException();
         }
@@ -28,9 +29,7 @@ namespace SocialMedia.Business.Concrete
 
         public List<User> GetAll()
         {
-            var _users = _userRepository.GetAll();
-
-            return _users;
+            throw new NotImplementedException();
         }
 
         public User GetById(Guid id)
@@ -43,7 +42,7 @@ namespace SocialMedia.Business.Concrete
             throw new NotImplementedException();
         }
 
-        public User Update(User entity)
+        public Task<User?> Update(User entity)
         {
             throw new NotImplementedException();
         }

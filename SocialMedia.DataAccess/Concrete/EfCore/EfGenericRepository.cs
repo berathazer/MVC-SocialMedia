@@ -7,61 +7,29 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
     where TEntity : class
     where TContext : DbContext, new()
     {
-        public bool Create(TEntity entity)
+        public Task<bool> Create(TEntity entity)
         {
-            using (var context = new TContext())
-            {
-                context.Set<TEntity>().Add(entity);
-                context.SaveChanges();
-                return true;
-            }
+            throw new NotImplementedException();
         }
 
         public bool Delete(Guid id)
         {
-            using (var context = new TContext())
-            {
-                var entity = context.Set<TEntity>().Find(id);
-
-                if (entity == null)
-                    return false;
-
-                context.Set<TEntity>().Remove(entity);
-                context.SaveChanges();
-                return true;
-            }
+            throw new NotImplementedException();
         }
 
         public List<TEntity> GetAll()
         {
-            using (var context = new TContext())
-            {
-                return context.Set<TEntity>().ToList();
-            }
+            throw new NotImplementedException();
         }
 
         public TEntity GetById(Guid id)
         {
-            using (var context = new TContext())
-            {
-                TEntity? entity = context.Set<TEntity>().Find(id);
-
-                if(entity == null)
-                {
-                    throw new InvalidOperationException("Belirtilen ID'ye sahip kayıt bulunamadı.");
-                }
-                return entity;
-            }
+            throw new NotImplementedException();
         }
 
-        public TEntity Update(TEntity entity)
+        public Task<TEntity?> Update(TEntity entity)
         {
-            using (var context = new TContext())
-            {
-                context.Entry(entity).State = EntityState.Modified;
-                context.SaveChanges();
-                return entity;
-            }
+            throw new NotImplementedException();
         }
     }
 }
