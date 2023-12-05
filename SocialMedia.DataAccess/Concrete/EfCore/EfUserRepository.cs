@@ -65,7 +65,7 @@ namespace SocialMedia.DataAccess.Concrete
         {
             using (var context = new AppDbContext())
             {
-                return context.Users.Find(id)!;
+                return context.Users.Find(id);
             }
         }
 

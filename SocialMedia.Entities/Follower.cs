@@ -11,9 +11,9 @@ namespace SocialMedia.Entities
         }
         [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid FollowerID { get; set; }
-        [Required]
+        [Required] //Takip isteği atan kullanıcı
         public required Guid FollowerUserID { get; set; }
-        [Required]
+        [Required] //Takip isteği alacak olan kullanıcı
         public required Guid FollowingUserID { get; set; }
         public DateTimeOffset FollowDate { get; set; }
 

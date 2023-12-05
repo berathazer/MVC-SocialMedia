@@ -10,7 +10,6 @@
             <div class="d-flex flex-column gap-3" data-html="true">
                 @foreach (var post in ViewBag.posts)
                 {
-                    Console.WriteLine(post.PostContent); // Veya diğer post özellikleri
                     await Html.RenderPartialAsync("../Shared/Components/_PostCard.cshtml", post, ViewData);
                 }
             </div>
