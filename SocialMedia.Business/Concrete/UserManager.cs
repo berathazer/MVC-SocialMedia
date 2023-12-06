@@ -5,9 +5,10 @@ using SocialMedia.Entities;
 namespace SocialMedia.Business.Concrete
 {
     using BCrypt.Net;
+
     public class UserManager : IUserService
     {
-        
+
         private IUserRepository _userRepository;
 
         public UserManager(IUserRepository userRepository)
@@ -15,9 +16,22 @@ namespace SocialMedia.Business.Concrete
             _userRepository = userRepository;
         }
 
+        public Task<User> Authenticate(string credential, string password)
+        {
+            // Kullanıcı doğrulama işlemi
+            // Gerekirse parola kontrolü ve diğer gerekli işlemler burada yapılabilir
+            throw new NotImplementedException();
+        }
+
+
         public async Task<bool> Create(User entity)
         {
-            var hashedPassword = BCrypt
+
+            // Kullanıcıyı veritabanına ekleme işlemi
+            // Gerekirse parola hashleme ve diğer gerekli işlemler burada yapılabilir
+
+            //şifreyi hashle ve yeni kullanıcı oluştur.
+            entity.Password = BCrypt.EnhancedHashPassword(entity.Password);
             var res = await _userRepository.Create(entity);
 
             if (!res)
@@ -26,7 +40,7 @@ namespace SocialMedia.Business.Concrete
             }
 
             return true;
-            }
+        }
 
         public bool Delete(Guid id)
         {
@@ -52,5 +66,6 @@ namespace SocialMedia.Business.Concrete
         {
             throw new NotImplementedException();
         }
+
     }
 }

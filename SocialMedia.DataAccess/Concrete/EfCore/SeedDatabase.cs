@@ -11,7 +11,6 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
 
         public static async Task Seed()
         {
-            Like? _likes = null;
 
             var context = new AppDbContext();
 
@@ -23,53 +22,127 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
                 if (context.Users.Count() == 0)
                 {
                     await context.Users.AddRangeAsync(Users);
+                    await context.SaveChangesAsync();
+
                 }
 
                 if (context.Posts.Count() == 0)
                 {
+                    var _Users = await context.Users.ToListAsync();
+                    Post[] Posts = {
+                        new Post(){
+
+                            PostContent="Bu bir deneme postudur",
+                            UserID=_Users[0].UserID
+                        },
+                        new Post(){
+
+                            PostContent="Bberatag ahsdhu bir deneme postudur",
+                            UserID=_Users[0].UserID
+                        },
+                        new Post(){
+
+                            PostContent="Burcu ahsdhu bir deneme postudur",
+                            UserID=_Users[1].UserID
+                        },
+                        new Post(){
+
+                            PostContent="Burcununasfd ahsdhu bir deneme postudur",
+                            UserID=_Users[1].UserID
+                        }
+                    };
                     await context.Posts.AddRangeAsync(Posts);
+
+                    await context.SaveChangesAsync();
+
+
                 }
+
 
                 if (context.Reposts.Count() == 0)
                 {
+
+                    var _Users = await context.Users.ToListAsync();
+                    var _Posts = await context.Posts.ToListAsync();
+                    Repost[] Reposts ={
+                        new Repost(){
+
+                                OriginalPostID = _Posts[0].PostID,
+                                UserID=_Users[2].UserID
+                            },
+                        new Repost(){
+
+                                OriginalPostID = _Posts[1].PostID,
+                                UserID=_Users[2].UserID
+                            }
+                    };
+
                     await context.Reposts.AddRangeAsync(Reposts);
+                    await context.SaveChangesAsync();
+
                 }
+
 
                 if (context.Likes.Count() == 0)
                 {
-                    await context.Likes.AddRangeAsync(Likes);
+                    var _Users = await context.Users.ToListAsync();
+                    var _Posts = await context.Posts.ToListAsync();
+                    Like[] Likes = {
+                        new Like()
+                            {
 
+                                UserID = _Users[2].UserID,
+                                PostID = _Posts[0].PostID
+                            },
+                        new Like()
+                            {
+
+                                UserID = _Users[1].UserID,
+                                PostID = _Posts[0].PostID
+                            }
+
+                        };
+
+                    await context.Likes.AddRangeAsync(Likes);
+                    await context.SaveChangesAsync();
 
                 }
 
+
                 if (context.Followers.Count() == 0)
                 {
+                    var _Users = await context.Users.ToListAsync();
+                    var _Posts = await context.Posts.ToListAsync();
                     await context.Followers.AddAsync(
                         new Follower()
                         {
-                            FollowerUserID = Users[0].UserID,
-                            FollowingUserID = Users[1].UserID
+                            FollowerUserID = _Users[0].UserID,
+                            FollowingUserID = _Posts[1].UserID
                         }
                     );
+                    await context.SaveChangesAsync();
+
                 }
 
                 if (context.Comments.Count() == 0)
                 {
+                    var _Users = await context.Users.ToListAsync();
+                    var _Posts = await context.Posts.ToListAsync();
                     await context.Comments.AddAsync(
                         new Comment()
                         {
                             CommentText = "ooo ilk mesajı atmayan adam adammıdır.",
-                            UserID = Users[1].UserID,
-                            PostID = Posts[0].PostID
+                            UserID = _Users[1].UserID,
+                            PostID = _Posts[0].PostID
                         }
                     );
+
                 }
 
 
 
                 await context.SaveChangesAsync();
-                _likes = await context.Likes.FirstOrDefaultAsync(u => u.UserID != Guid.NewGuid());
-                Console.WriteLine(_likes?.UserID);
+
                 Console.WriteLine("Database seed successfully.");
 
             }
@@ -101,56 +174,6 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
         };
 
 
-        private static Post[] Posts = {
-            new Post(){
-
-                PostContent="Bu bir deneme postudur",
-                UserID=Users[0].UserID
-            },
-            new Post(){
-
-                PostContent="Bberatag ahsdhu bir deneme postudur",
-                UserID=Users[0].UserID
-            },
-            new Post(){
-
-                PostContent="Burcu ahsdhu bir deneme postudur",
-                UserID=Users[1].UserID
-            },
-            new Post(){
-
-                PostContent="Burcununasfd ahsdhu bir deneme postudur",
-                UserID=Users[0].UserID
-            }
-        };
-
-        private static Repost[] Reposts ={
-              new Repost(){
-
-                    OriginalPostID = Posts[0].PostID,
-                    UserID=Users[2].UserID
-                },
-            new Repost(){
-
-                    OriginalPostID = Posts[1].PostID,
-                    UserID=Users[2].UserID
-                }
-        };
-
-        private static Like[] Likes = {
-             new Like()
-                {
-
-                    UserID = Users[2].UserID,
-                    PostID = Posts[0].PostID
-                },
-            new Like()
-                {
-
-                    UserID = Users[1].UserID,
-                    PostID = Posts[0].PostID
-                }
-    };
 
 
 

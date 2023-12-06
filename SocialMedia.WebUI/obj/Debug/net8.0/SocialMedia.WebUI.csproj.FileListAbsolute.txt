@@ -1,5 +1,7 @@
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\appsettings.json
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\package-lock.json
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\package.json
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\SocialMedia.WebUI.staticwebassets.runtime.json
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\SocialMedia.WebUI.exe
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\SocialMedia.WebUI.deps.json
@@ -8,7 +10,9 @@ C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\SocialMedia.WebUI.pdb
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\Humanizer.dll
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -146,5 +150,3 @@ C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\obj\Debug\net8.0
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\obj\Debug\net8.0\SocialMedia.WebUI.pdb
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\obj\Debug\net8.0\SocialMedia.WebUI.genruntimeconfig.cache
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\obj\Debug\net8.0\ref\SocialMedia.WebUI.dll
-C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\package-lock.json
-C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.WebUI\bin\Debug\net8.0\package.json

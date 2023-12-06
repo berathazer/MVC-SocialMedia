@@ -6,8 +6,10 @@ namespace SocialMedia.DataAccess
     public class AppDbContext : DbContext
     {
 
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer("Server=BERAA;Initial Catalog=SocialMedia;User Id=sa;Password=Berat102030;Encrypt=true;TrustServerCertificate=true;");
         }

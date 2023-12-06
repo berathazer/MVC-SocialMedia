@@ -12,8 +12,8 @@ using SocialMedia.DataAccess;
 namespace SocialMedia.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231204163040_AddingUserCreatedAt")]
-    partial class AddingUserCreatedAt
+    [Migration("20231206161652_initialCreate")]
+    partial class initialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,7 +36,8 @@ namespace SocialMedia.DataAccess.Migrations
 
                     b.Property<string>("CommentText")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<Guid>("PostID")
                         .HasColumnType("uniqueidentifier");

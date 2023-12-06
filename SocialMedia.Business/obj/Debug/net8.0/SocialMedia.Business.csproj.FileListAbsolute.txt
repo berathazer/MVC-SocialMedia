@@ -1,9 +1,3 @@
-C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.csproj.AssemblyReference.cache
-C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.AssemblyInfoInputs.cache
-C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.AssemblyInfo.cs
-C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.csproj.CoreCompileInputs.cache
-C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.sourcelink.json
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\bin\Debug\net8.0\SocialMedia.Business.deps.json
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\bin\Debug\net8.0\SocialMedia.Business.dll
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\bin\Debug\net8.0\SocialMedia.Business.pdb
@@ -11,6 +5,12 @@ C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\bin\Debug\net
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\bin\Debug\net8.0\SocialMedia.Entities.dll
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\bin\Debug\net8.0\SocialMedia.Entities.pdb
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\bin\Debug\net8.0\SocialMedia.DataAccess.pdb
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.csproj.AssemblyReference.cache
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.AssemblyInfoInputs.cache
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.AssemblyInfo.cs
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.csproj.CoreCompileInputs.cache
+C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.sourcelink.json
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.csproj.CopyComplete
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\SocialMedia.Business.dll
 C:\Users\berat\Desktop\c# kodlari\SocialMedia\SocialMedia.Business\obj\Debug\net8.0\refint\SocialMedia.Business.dll

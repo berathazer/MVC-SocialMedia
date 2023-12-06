@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SocialMedia.Entities
 {
+
     public class Repost
     {
 
@@ -10,7 +11,7 @@ namespace SocialMedia.Entities
         {
             RepostDate = DateTimeOffset.Now;
         }
-        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid RepostID { get; set; }
         [Required]
         public required Guid UserID { get; set; }
