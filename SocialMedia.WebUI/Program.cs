@@ -21,7 +21,7 @@ var app = builder.Build();
 // geliştirme modunda olması gereken kısımlar
 if (app.Environment.IsDevelopment())
 {
-    SeedDatabase.Seed();
+    await SeedDatabase.Seed();
     app.UseDeveloperExceptionPage();
 }
 

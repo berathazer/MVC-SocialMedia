@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "SNAkowv8p5/l03b2w3vOkZN6jA7K7tCSHzx8jI8gbZUCeZe1JoRIi+Mys4uEm1F13vuYLlwVTHarLMRaKGBPYg==",
+  "dgSpecHash": "LmiIzEZPS/PkP4cctcobjZ1EtZD/VVuRhCcLTzNSVaFE3SFcr8I0T3cU2YQ8ehwv3fwWjcoHyapl+JqyppdUiA==",
   "success": true,
   "projectFilePath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.WebUI\\SocialMedia.WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\berat\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\berat\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\berat\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\berat\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\berat\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\berat\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

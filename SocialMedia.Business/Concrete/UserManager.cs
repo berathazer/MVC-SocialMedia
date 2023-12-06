@@ -1,15 +1,13 @@
-
-
 using SocialMedia.Business.Abstract;
 using SocialMedia.DataAccess.Abstract;
-using SocialMedia.DataAccess.Concrete;
 using SocialMedia.Entities;
 
 namespace SocialMedia.Business.Concrete
 {
+    using BCrypt.Net;
     public class UserManager : IUserService
     {
-
+        
         private IUserRepository _userRepository;
 
         public UserManager(IUserRepository userRepository)
@@ -17,10 +15,18 @@ namespace SocialMedia.Business.Concrete
             _userRepository = userRepository;
         }
 
-        public Task<bool> Create(User entity)
+        public async Task<bool> Create(User entity)
         {
-            throw new NotImplementedException();
-        }
+            var hashedPassword = BCrypt
+            var res = await _userRepository.Create(entity);
+
+            if (!res)
+            {
+                return false;
+            }
+
+            return true;
+            }
 
         public bool Delete(Guid id)
         {

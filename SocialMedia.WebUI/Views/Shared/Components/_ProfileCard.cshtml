@@ -1,17 +1,27 @@
-<div class="card">
-    <div class="card-header">
-        Takip Önerileri
-    </div>
-    <div class="card-body">
-        <!-- Takip önerileri içeriği buraya eklenebilir -->
+@{
+    var partialContent = await Html.PartialAsync("_SuggestCard.cshtml");
+}
+<div class="card mb-4">
+    <div class="card-body text-center">
+        <img src="https://placekitten.com/100/100" class="rounded-circle img-fluid" alt="Profile Picture">
+        <h5 class="card-title mt-3">berathazer</h5>
+        <p class="card-text">Biyografi: Kullanıcı hakkında kısa bir açıklama.</p>
+        <a href="#" class="btn btn-outline-primary btn-sm">Profili Düzenle</a>
     </div>
 </div>
 
-<div class="card mt-3">
-    <div class="card-header">
-        Profil
-    </div>
-    <div class="card-body">
-        <!-- Profil bilgileri buraya eklenebilir -->
+
+<div class="card p-0 border-0 bg-light">
+    <div class="card-body p-0">
+        <h5 class="card-title">Takip Önerileri</h5>
+
+
+        <div class="list-group bg-light gap-2">
+            @await Html.PartialAsync("_SuggestCard.cshtml")
+            @await Html.PartialAsync("_SuggestCard.cshtml")
+            @await Html.PartialAsync("_SuggestCard.cshtml")
+            @await Html.PartialAsync("_SuggestCard.cshtml")
+        </div>
+
     </div>
 </div>
