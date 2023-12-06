@@ -61,7 +61,7 @@ namespace SocialMedia.DataAccess.Concrete
             }
         }
 
-        public User GetById(Guid id)
+        public User? GetById(Guid id)
         {
             using (var context = new AppDbContext())
             {
@@ -69,7 +69,7 @@ namespace SocialMedia.DataAccess.Concrete
             }
         }
 
-        public async Task<User> GetUserByEmailOrUsername(string credential)
+        public async Task<User?> GetUserByEmailOrUsername(string credential)
         {
             using (var context = new AppDbContext())
             {

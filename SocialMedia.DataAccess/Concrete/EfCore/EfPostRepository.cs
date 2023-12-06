@@ -39,7 +39,7 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
             }
         }
 
-        public Post GetById(Guid id)
+        public Post? GetById(Guid id)
         {
             using (var context = new AppDbContext())
             {

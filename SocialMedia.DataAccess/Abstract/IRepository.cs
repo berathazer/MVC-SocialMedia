@@ -2,7 +2,7 @@ namespace SocialMedia.DataAccess.Abstract
 {
     public interface IRepository<T>
     {
-        T GetById(Guid id);
+        T? GetById(Guid id);
 
         List<T> GetAll();
 
