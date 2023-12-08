@@ -29,7 +29,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 //Signletons
 builder.Services.AddSingleton<IUserRepository, EfUserRepository>();
 builder.Services.AddSingleton<IUserService, UserManager>();
-
+builder.Services.AddScoped<IAuthService, AuthManager>();
 
 var app = builder.Build();
 

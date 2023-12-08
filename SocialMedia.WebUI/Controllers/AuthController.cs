@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SocialMedia.Business.Abstract;
+using SocialMedia.Entities;
+using SocialMedia.WebUI.Models.Auth;
 
 
 namespace SocialMedia.WebUI.Controllers
@@ -13,10 +15,12 @@ namespace SocialMedia.WebUI.Controllers
     {
         private readonly ILogger<AuthController> _logger;
         private IAuthService _authService;
-        public AuthController(ILogger<AuthController> logger, IAuthService authService)
+        private IUserService _userService;
+        public AuthController(ILogger<AuthController> logger, IAuthService authService, IUserService userService)
         {
             _logger = logger;
             _authService = authService;
+            _userService = userService;
         }
 
         //Auth page, sadece giriş yapanlar görebilir
@@ -67,6 +71,64 @@ namespace SocialMedia.WebUI.Controllers
         }
 
 
+        public IActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterFormModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new User
+                {
+                    FullName = model.FirstName + " " + model.LastName,
+                    Email = model.Email,
+                    Username = model.Username,
+                    Password = model.Password
+                };
+                Console.WriteLine("Registere post geldi user oluşturma başarılı");
+                TempData["SuccessMessage"] = "Başarıyla kayıt oldunuz. Şimdi giriş yapabilirsiniz.";
+                return RedirectToAction("Register");
+                var result = await _userService.Create(user);
+
+                if (result)
+                {
+                    // Başarılı bir şekilde kayıt olundu, giriş yap sayfasına yönlendir
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    // Kayıt işlemi başarısız, hata mesajını göster
+                    ModelState.AddModelError("", "Kayıt olma işlemi başarısız oldu.");
+                }
+            }
+            else
+            {
+                var missingFields = ModelState.Where(x => x.Value.Errors.Any())
+                              .Select(x => new
+                              {
+                                  FieldName = x.Key,
+                                  ErrorMessage = x.Value.Errors.First().ErrorMessage
+                              })
+                              .ToList();    
+
+                if (missingFields.Any())
+                {
+                    foreach (var missingField in missingFields)
+                    {
+                        Console.WriteLine($"{missingField.FieldName} alanı eksik. Hata: {missingField.ErrorMessage}");
+                        TempData["ErrorMessage"] = missingField.ErrorMessage;
+                        break;
+                    }
+
+                    return RedirectToAction("Register");
+
+                }
+            }
+
+            return View(model);
+        }
 
     }
 }

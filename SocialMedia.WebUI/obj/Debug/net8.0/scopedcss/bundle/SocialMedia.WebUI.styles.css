@@ -2,22 +2,23 @@
 /* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-html[b-kzo4ne0uz1],
-body[b-kzo4ne0uz1],
-:root[b-kzo4ne0uz1] {
+/* html,
+body,
+:root {
 	height: 100%;
 }
 
-.min-h-screen[b-kzo4ne0uz1] {
+.min-h-screen {
 	min-height: calc(100vh - 60px);
 }
 
-.avatar[b-kzo4ne0uz1] {
+.avatar {
 	width: 40px !important;
 	height: 40px !important;
 	background-color: aqua;
 }
 
-.cursor-pointer[b-kzo4ne0uz1] {
+.cursor-pointer {
 	cursor: pointer;
 }
+ */

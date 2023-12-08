@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using SocialMedia.Entities.enums;
 
 namespace SocialMedia.Entities
 {
@@ -8,11 +9,14 @@ namespace SocialMedia.Entities
     [Index(nameof(Username), IsUnique = true)]
     public class User
     {
-        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid UserID { get; set; }
 
         [Required(ErrorMessage = "FullName alanı zorunludur.")]
         public string? FullName { get; set; }
+
+
+        public RoleType Role { get; set; } = RoleType.User;
 
         [Required(ErrorMessage = "Username alanı zorunludur.")]
         public required string Username { get; set; }
