@@ -1,3 +1,9 @@
+@model SocialMedia.WebUI.Models.Auth.RegisterFormModel
+
+@*
+asp-for tag'ı modelden aldığı alanı name,id değeri olarak otomatik ayarlıyor.
+*@
+
 @{
     Layout = "_Layout";
     ViewData["HideNavbar"] = true;
@@ -5,6 +11,7 @@
     var successMessage = TempData["SuccessMessage"] as string;
     var errorMessage = TempData["ErrorMessage"] as string;
 }
+
 
 <section class="background-radial-gradient overflow-hidden d-flex align-items-center min-vh-100 ">
     <style>
@@ -73,54 +80,51 @@
 
                 <div class="card bg-glass">
                     <div class="card-body px-4 py-5 px-md-5">
-                        @if (!string.IsNullOrEmpty(successMessage))
-                        {
-                            <div class="alert alert-success">
-                                @successMessage
-                            </div>
-                        }
 
-                        @if (!string.IsNullOrEmpty(errorMessage))
-                        {
-                            <div class="alert alert-danger alert-link">
-                                @errorMessage
-                            </div>
-                        }
-                        <form action="/Auth/Register" method="post">
-                            <!-- 2 column grid layout with text inputs for the first and last names -->
+
+                        <form asp-controller="Auth" asp-action="Register" method="post" asp-antiforgery="true">
+                            @if (!string.IsNullOrEmpty(errorMessage))
+                            {
+                                <div class="alert alert-danger">
+                                    @errorMessage
+                                </div>
+                            }
                             <div class="row">
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label text-white" for="firstName">İsim</label>
-                                        <input type="text" id="firstName" name="FirstName" class="form-control" />
+                                        <label class="form-label text-white" asp-for="FirstName">İsim</label>
+                                        <input type="text" asp-for="FirstName" class="form-control" />
+                                        <span class="text-danger" asp-validation-for="FirstName"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label text-white" for="lastName">Soyisim</label>
-                                        <input type="text" id="lastName" name="LastName" class="form-control" />
+                                        <label class="form-label text-white" asp-for="LastName">Soyisim</label>
+                                        <input type="text" asp-for="LastName" class="form-control" />
+                                        <span class="text-danger" asp-validation-for="LastName"></span>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Username input -->
                             <div class="form-outline mb-4">
-                                <label class="form-label text-white" for="username">Kullanıcı Adı</label>
-                                <input type="" id="username" name="Username" class="form-control"
-                                    autocomplete="off" />
+                                <label class="form-label text-white" asp-for="Username">Kullanıcı Adı</label>
+                                <input type="text" asp-for="Username" class="form-control" autocomplete="off" />
+                                <span class="text-danger" asp-validation-for="Username"></span>
                             </div>
 
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                                <label class="form-label text-white" for="email">Email</label>
-                                <input type="email" id="email" name="Email" class="form-control" />
-                            </div>text
+                                <label class="form-label text-white" asp-for="Email">Email</label>
+                                <input type="email" asp-for="Email" class="form-control" />
+                                <span class="text-danger" asp-validation-for="Email"></span>
+                            </div>
 
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                                <label class="form-label text-white" for="password">Şifre</label>
-                                <input type="password" id="password" name="Password" class="form-control"
-                                    autocomplete="off" />
+                                <label class="form-label text-white" asp-for="Password">Şifre</label>
+                                <input type="password" asp-for="Password" class="form-control" autocomplete="off" />
+                                <span class="text-danger" asp-validation-for="Password"></span>
                             </div>
 
                             <!-- Submit button -->
@@ -140,3 +144,9 @@
         </div>
     </div>
 </section>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

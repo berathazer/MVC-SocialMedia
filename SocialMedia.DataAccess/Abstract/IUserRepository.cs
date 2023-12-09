@@ -7,7 +7,7 @@ namespace SocialMedia.DataAccess.Abstract
     {
 
         Task<User?> GetUserByEmailOrUsername(string credential);
-
+        Task<User?> CheckExistingUserByEmailOrUsername(string username,string email);
 
     }
 }

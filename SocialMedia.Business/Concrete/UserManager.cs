@@ -1,3 +1,4 @@
+
 using SocialMedia.Business.Abstract;
 using SocialMedia.DataAccess.Abstract;
 using SocialMedia.Entities;
@@ -5,7 +6,7 @@ using SocialMedia.Entities;
 namespace SocialMedia.Business.Concrete
 {
 
-
+    using BCrypt.Net;
     public class UserManager : IUserService
     {
 
@@ -18,6 +19,15 @@ namespace SocialMedia.Business.Concrete
 
         public async Task<bool> Create(User entity)
         {
+            var _user = await _userRepository.CheckExistingUserByEmailOrUsername(entity.Username, entity.Email);
+
+            if (_user != null)
+            {
+                return false;
+            }
+
+            entity.Password = BCrypt.EnhancedHashPassword(entity.Password);
+
             return await _userRepository.Create(entity);
         }
 

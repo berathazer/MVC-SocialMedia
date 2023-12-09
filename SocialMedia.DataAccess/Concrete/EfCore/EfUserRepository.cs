@@ -73,14 +73,15 @@ namespace SocialMedia.DataAccess.Concrete
         {
             using (var context = new AppDbContext())
             {
-                var _user = await context.Users.FirstOrDefaultAsync(u => u.Email == credential || u.Username == credential);
+                return await context.Users.FirstOrDefaultAsync(u => u.Email == credential || u.Username == credential);
+            }
+        }
 
-                if (_user != null)
-                {
-                    return _user;
-                }
-
-                return null;
+        public async Task<User?> CheckExistingUserByEmailOrUsername(string username, string email)
+        {
+            using (var context = new AppDbContext())
+            {
+                return await context.Users.FirstOrDefaultAsync(u => u.Username == username || u.Email == email);
             }
         }
     }

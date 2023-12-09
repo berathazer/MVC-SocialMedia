@@ -75,9 +75,12 @@ namespace SocialMedia.WebUI.Controllers
         {
             return View();
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterFormModel model)
         {
+            Console.WriteLine("Posta  girdi");
             if (ModelState.IsValid)
             {
                 var user = new User
@@ -87,43 +90,22 @@ namespace SocialMedia.WebUI.Controllers
                     Username = model.Username,
                     Password = model.Password
                 };
-                Console.WriteLine("Registere post geldi user oluşturma başarılı");
-                TempData["SuccessMessage"] = "Başarıyla kayıt oldunuz. Şimdi giriş yapabilirsiniz.";
-                return RedirectToAction("Register");
+
                 var result = await _userService.Create(user);
 
                 if (result)
                 {
+                    Console.WriteLine("Registere post geldi user oluşturma başarılı");
+
                     // Başarılı bir şekilde kayıt olundu, giriş yap sayfasına yönlendir
                     return RedirectToAction("Login");
+
                 }
                 else
                 {
+                    Console.WriteLine("Registere post geldi user oluşturma başarısız");
                     // Kayıt işlemi başarısız, hata mesajını göster
-                    ModelState.AddModelError("", "Kayıt olma işlemi başarısız oldu.");
-                }
-            }
-            else
-            {
-                var missingFields = ModelState.Where(x => x.Value.Errors.Any())
-                              .Select(x => new
-                              {
-                                  FieldName = x.Key,
-                                  ErrorMessage = x.Value.Errors.First().ErrorMessage
-                              })
-                              .ToList();    
-
-                if (missingFields.Any())
-                {
-                    foreach (var missingField in missingFields)
-                    {
-                        Console.WriteLine($"{missingField.FieldName} alanı eksik. Hata: {missingField.ErrorMessage}");
-                        TempData["ErrorMessage"] = missingField.ErrorMessage;
-                        break;
-                    }
-
-                    return RedirectToAction("Register");
-
+                    TempData["ErrorMessage"] = "Böyle bir kullanıcı zaten mevcut!";
                 }
             }
 
