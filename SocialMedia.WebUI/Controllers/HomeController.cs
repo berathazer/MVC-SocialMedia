@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SocialMedia.DataAccess;
+using SocialMedia.WebUI.Services;
 
 namespace SocialMedia.WebUI.Controllers
 {
@@ -9,10 +11,11 @@ namespace SocialMedia.WebUI.Controllers
     {
 
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private LanguageService _localization;
+        public HomeController(ILogger<HomeController> logger, LanguageService localization)
         {
             _logger = logger;
+            _localization = localization;
         }
         [Authorize]
         public IActionResult Index()
@@ -30,6 +33,16 @@ namespace SocialMedia.WebUI.Controllers
                 return View();
             }
 
+        }
+
+        public IActionResult ChangeLanguage(string culture)
+        {
+            Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)), new CookieOptions()
+                {
+                    Expires = DateTimeOffset.UtcNow.AddYears(1)
+                });
+            return Redirect(Request.Headers["Referer"].ToString());
         }
 
         public IActionResult Privacy()

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using SocialMedia.Business.Abstract;
 using SocialMedia.Entities;
 using SocialMedia.WebUI.Models.Auth;
+using SocialMedia.WebUI.Services;
 
 
 namespace SocialMedia.WebUI.Controllers
@@ -16,11 +17,20 @@ namespace SocialMedia.WebUI.Controllers
         private readonly ILogger<AuthController> _logger;
         private IAuthService _authService;
         private IUserService _userService;
-        public AuthController(ILogger<AuthController> logger, IAuthService authService, IUserService userService)
+
+        private LanguageService _localization;
+
+        public AuthController(
+            ILogger<AuthController> logger,
+            IAuthService authService,
+            IUserService userService,
+            LanguageService localization
+        )
         {
             _logger = logger;
             _authService = authService;
             _userService = userService;
+            _localization = localization;
         }
 
         //Auth page, sadece giriş yapanlar görebilir
