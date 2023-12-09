@@ -37,6 +37,13 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+
+      <form asp-action="Logout" asp-controller="Auth" asp-antiforgery="true" method="post">
+        <button type="submit" class="btn btn-outline-danger mx-2">
+          Çıkış yap
+        </button>
+      </form>
+
     </div>
   </div>
 </nav>

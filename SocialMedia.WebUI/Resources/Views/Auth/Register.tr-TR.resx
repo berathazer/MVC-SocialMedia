@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
     Microsoft ResX Schema
@@ -118,35 +118,47 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Welcome" xml:space="preserve">
-    <value>Welcome EN</value>
+    <value>Hoşgeldiniz.. TR</value>
     <comment/>
   </data>
   <data name="Register.FirstName" xml:space="preserve">
-    <value>Firstname</value>
+    <value>İsim</value>
     <comment/>
   </data>
   <data name="Register.LastName" xml:space="preserve">
-    <value>Lastname</value>
+    <value>Soyisim</value>
     <comment/>
   </data>
   <data name="Register.Username" xml:space="preserve">
-    <value>Username</value>
+    <value>Kullanıcı Adı</value>
     <comment/>
   </data>
   <data name="Register.Password" xml:space="preserve">
-    <value>Password</value>
+    <value>Şifre</value>
     <comment/>
   </data>
   <data name="Register.Button" xml:space="preserve">
-    <value>Sign Up</value>
+    <value>Kayıt Ol</value>
     <comment/>
   </data>
   <data name="Register.LinkText" xml:space="preserve">
-    <value>Already have an account ?</value>
+    <value>Zaten bir hesabınız var mı ?</value>
     <comment/>
   </data>
   <data name="Register.Link" xml:space="preserve">
-    <value>Login</value>
+    <value>Giriş Yapın</value>
+    <comment/>
+  </data>
+  <data name="Register.Brand.V1" xml:space="preserve">
+    <value>Yeni bir deneyim</value>
+    <comment/>
+  </data>
+  <data name="Register.Brand.V2" xml:space="preserve">
+    <value>sizleri bekliyor</value>
+    <comment/>
+  </data>
+  <data name="Register.Brand" xml:space="preserve">
+    <value>Sosyal Medya dünyasına hoş geldiniz, bizimle tanışmaya hazır mısınız? İşte karşınızda sıradışı bir platform, size daha yakın, daha bağlı ve daha eğlenceli bir sosyal medya deneyimi sunmak için burada!</value>
     <comment/>
   </data>
 </root>

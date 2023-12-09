@@ -20,7 +20,6 @@ namespace SocialMedia.Business.Abstract
         {
             //gelen parametreleri kontrol et
             //passwordu hashle
-            var hashedPassword = BCrypt.EnhancedHashPassword(password);
 
             var user = await _userRepository.GetUserByEmailOrUsername(credential);
 
@@ -30,7 +29,9 @@ namespace SocialMedia.Business.Abstract
                 return null;
             }
 
-            if (user.Password != hashedPassword)
+            var IsPasswordValid = BCrypt.EnhancedVerify(password,user.Password);
+
+            if (!IsPasswordValid)
             {
                 //şifre yanlış mesajı döndürülebilir.
                 return null;

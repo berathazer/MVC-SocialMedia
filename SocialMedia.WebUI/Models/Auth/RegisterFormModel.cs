@@ -1,7 +1,5 @@
 
 using System.ComponentModel.DataAnnotations;
-using SocialMedia.WebUI.Services;
-
 
 namespace SocialMedia.WebUI.Models.Auth
 {

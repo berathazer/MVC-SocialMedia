@@ -117,36 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Welcome" xml:space="preserve">
-    <value>Hoşgeldiniz.. TR</value>
+  <data name="Login.Username" xml:space="preserve">
+    <value>Kullanıcı Adı veya Email</value>
     <comment/>
   </data>
-  <data name="Register.FirstName" xml:space="preserve">
-    <value>İsim</value>
-    <comment/>
-  </data>
-  <data name="Register.LastName" xml:space="preserve">
-    <value>Soyisim</value>
-    <comment/>
-  </data>
-  <data name="Register.Username" xml:space="preserve">
-    <value>Kullanıcı Adı</value>
-    <comment/>
-  </data>
-  <data name="Register.Password" xml:space="preserve">
+  <data name="Login.Password" xml:space="preserve">
     <value>Şifre</value>
     <comment/>
   </data>
-  <data name="Register.Button" xml:space="preserve">
-    <value>Kayıt Ol</value>
+  <data name="Login.Button" xml:space="preserve">
+    <value>Giriş Yap</value>
     <comment/>
   </data>
-  <data name="Register.LinkText" xml:space="preserve">
-    <value>Zaten bir hesabınız var mı ?</value>
+  <data name="Login.Link.Text" xml:space="preserve">
+    <value>Hesabınız yokmu ?</value>
     <comment/>
   </data>
-  <data name="Register.Link" xml:space="preserve">
-    <value>Giriş Yapın</value>
+  <data name="Login.Link" xml:space="preserve">
+    <value>Hesap Oluştur</value>
+    <comment/>
+  </data>
+  <data name="Login.Brand.V1" xml:space="preserve">
+    <value>Yeni bir deneyim</value>
+    <comment/>
+  </data>
+  <data name="Login.Brand.V2" xml:space="preserve">
+    <value>sizleri bekliyor</value>
+    <comment/>
+  </data>
+  <data name="Login.Brand" xml:space="preserve">
+    <value>Sosyal Medya dünyasına hoş geldiniz, bizimle tanışmaya hazır mısınız? İşte karşınızda sıradışı bir platform, size daha yakın, daha bağlı ve daha eğlenceli bir sosyal medya deneyimi sunmak için burada!</value>
     <comment/>
   </data>
 </root>

@@ -1,7 +1,7 @@
 using System.Globalization;
-using System.Reflection;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Options;
 using SocialMedia.Business.Abstract;
 using SocialMedia.Business.Concrete;
@@ -10,33 +10,29 @@ using SocialMedia.DataAccess.Abstract;
 using SocialMedia.DataAccess.Concrete;
 using SocialMedia.DataAccess.Concrete.EfCore;
 
-using SocialMedia.WebUI.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-#region Localizer
-builder.Services.AddSingleton<LanguageService>();
-builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
-builder.Services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(options =>
-    options.DataAnnotationLocalizerProvider = (type, factory) =>
-    {
-        var assemblyName = new AssemblyName(typeof(SharedResource).GetTypeInfo().Assembly.FullName!);
-        return factory.Create(nameof(SharedResource), assemblyName.Name!);
-    });
+builder.Services.AddControllersWithViews().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
+
+builder.Services.AddLocalization(options =>
+{
+    options.ResourcesPath = "Resources";
+
+});
 
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
-    var supportCultures = new List<CultureInfo>
-    {
+    var supportedCultures = new[]{
         new CultureInfo("en-US"),
-        new CultureInfo("tr-TR"),
+        new CultureInfo("tr-TR")
     };
-    options.DefaultRequestCulture = new RequestCulture(culture: "tr-TR", uiCulture: "tr-TR");
-    options.SupportedCultures = supportCultures;
-    options.SupportedUICultures = supportCultures;
-    options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
+
+    options.DefaultRequestCulture = new RequestCulture("tr-TR");
+    options.SupportedUICultures = supportedCultures;
+
 });
-#endregion
 
 // IConfiguration ekleniyor
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
@@ -80,7 +76,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseRequestLocalization(app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
+app.UseRequestLocalization();
 
 app.UseRouting();
 

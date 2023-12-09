@@ -1,4 +1,5 @@
 using System.Security.Claims;
+
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -6,11 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using SocialMedia.Business.Abstract;
 using SocialMedia.Entities;
 using SocialMedia.WebUI.Models.Auth;
-using SocialMedia.WebUI.Services;
-
 
 namespace SocialMedia.WebUI.Controllers
 {
+    using BCrypt.Net;
+    using Microsoft.AspNetCore.Antiforgery;
+    using SocialMedia.Entities.enums;
 
     public class AuthController : Controller
     {
@@ -18,19 +20,17 @@ namespace SocialMedia.WebUI.Controllers
         private IAuthService _authService;
         private IUserService _userService;
 
-        private LanguageService _localization;
 
         public AuthController(
             ILogger<AuthController> logger,
             IAuthService authService,
-            IUserService userService,
-            LanguageService localization
+            IUserService userService
         )
         {
             _logger = logger;
             _authService = authService;
             _userService = userService;
-            _localization = localization;
+
         }
 
         //Auth page, sadece giriş yapanlar görebilir
@@ -46,38 +46,46 @@ namespace SocialMedia.WebUI.Controllers
         {
             return View();
         }
+
         [HttpPost]
-        public async Task<IActionResult> LoginUser()
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginFormModel model)
         {
 
             //formdan gelen credential ve password bilgisini alıcak
-            //form validation yapılacak
-
-            //bilgileri AuthManager ile LoginUser fonksiyona gönderilecek
-            var user = await _authService.LoginUser("credential", "hashed password");
-            //geriye user dönmezse hata mesajı yazdırılacak
-            if (user == null)
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                //bilgileri AuthManager ile LoginUser fonksiyona gönderilecek
+                var user = await _authService.LoginUser(model.Credential, model.Password);
+
+                //geriye user dönmezse hata mesajı yazdırılacak
+                if (user == null)
+                {
+                    TempData["ErrorMessage"] = "Kullanıcı bulunamadı tekrar deneyin.";
+                    return View(model);
+
+                }
+
+                //login başarılı cookie oluştur
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Email, user.Email),
+                    new Claim(ClaimTypes.Name, user.Username),
+                    new Claim(ClaimTypes.Role,user.Role.ToString()),
+                    new Claim(ClaimTypes.SerialNumber,user.UserID.ToString())
+                };
+
+                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var authProperties = new AuthenticationProperties();
+
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
+
+                //cookie oluşturuldu, kullanıcıyı yönlendir.
+                return RedirectToAction("Index", "Auth");
             }
 
+            return View(model);
 
-            //login başarılı cookie oluştur
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.Role,"User"),
-                new Claim(ClaimTypes.SerialNumber,user.UserID.ToString())
-            };
-
-            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            var authProperties = new AuthenticationProperties();
-
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
-
-            //cookie oluşturuldu, kullanıcıyı yönlendir.
-            return RedirectToAction("Index", "Auth");
         }
 
 
@@ -122,5 +130,16 @@ namespace SocialMedia.WebUI.Controllers
             return View(model);
         }
 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            // Kullanıcıyı sistemden çıkış yap
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            Console.WriteLine("Logged out");
+            // Çıkış işlemi başarıyla gerçekleşti, anasayfaya yönlendir
+            return RedirectToAction("Login", "Auth");
+        }
     }
 }
