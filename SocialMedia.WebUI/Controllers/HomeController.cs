@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,17 @@ namespace SocialMedia.WebUI.Controllers
         {
             using (var db = new AppDbContext())
             {
+
+                var serialNumberClaim = HttpContext.User.FindFirst(ClaimTypes.SerialNumber);
+
+                if (serialNumberClaim != null)
+                {
+                    var serialNumber = serialNumberClaim.Value;
+                    ViewBag.UserId = serialNumber;
+                }
+
+                
+
                 var _posts = db.Posts
                 .Include(p => p.User)
                 .Include(p => p.Likes)

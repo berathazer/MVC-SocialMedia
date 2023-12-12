@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SocialMedia.WebUI")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute(" ")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32544498a41ac06297b8aed31a2b3407de68f4f0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fea34f802d57e185b92540685735a69fc96f8ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("SocialMedia.WebUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SocialMedia.WebUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

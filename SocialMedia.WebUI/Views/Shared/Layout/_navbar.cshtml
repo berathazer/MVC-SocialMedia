@@ -1,4 +1,16 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-black border-bottom">
+<style>
+  .navbar-nav .nav-link,.navbar-brand {
+    color: black;
+    /* veya istediğiniz başka bir renk */
+  }
+
+  /* Aktif (active) linkin rengi */
+  .navbar-nav .nav-link.active {
+    color: black;
+    /* Aktif linkin rengini siyah olarak ayarla */
+  }
+</style>
+<nav class="navbar navbar-expand-lg  border-bottom px-5 ">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
 
@@ -8,7 +20,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Anasayfa</a>
         </li>
@@ -18,31 +30,38 @@
         <li class="nav-item">
           <a class="nav-link" href="/auth">Authenticate</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
+
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
 
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
 
-      <form asp-action="Logout" asp-controller="Auth" asp-antiforgery="true" method="post">
-        <button type="submit" class="btn btn-outline-danger mx-2">
-          Çıkış yap
-        </button>
-      </form>
+
+
+
+      <div class="btn-group position-static mx-2">
+        <img data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false"
+          src="https://avatars.githubusercontent.com/u/124599?v=4" alt="BH" class=""
+          style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;">
+
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Profil</a></li>
+          <li><a class="dropdown-item" href="#">Takipçiler</a></li>
+          <li><a class="dropdown-item" href="#">Beğenilenler</a></li>
+
+          <form asp-action="Logout" asp-controller="Auth" asp-antiforgery="true" method="post" class="py-2">
+            <button type="submit" class="btn btn-outline-danger mx-2">
+              Çıkış yap
+            </button>
+          </form>
+        </ul>
+      </div>
+
+
 
     </div>
   </div>

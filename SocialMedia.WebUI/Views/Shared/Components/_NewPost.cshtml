@@ -1,0 +1,63 @@
+@model CreatePostModel
+
+<button type="button" class="btn btn-primary w-100 mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    data-bs-whatever="">Yeni bir gönderi ekleyin</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Gönderiniz Oluşturun</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Create" asp-controller="Post" method="post" enctype="multipart/form-data">
+              
+                    <div class="mb-3">
+                        <label for="content" class="col-form-label" asp-for="Content">İçerik:</label>
+                        <textarea class="form-control" asp-for="Content"></textarea>
+                    @*     <input type="text" asp-for="Content" class="form-control" /> *@
+                        <span class="text-danger" asp-validation-for="Content"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Media" class="col-form-label">Dosya (Fotoğraf veya Video):</label>
+                        <input type="file" class="form-control" accept="image/*, video/*" asp-for="Media" id="media"
+                            onchange="showSelectedImage(this.files[0])">
+                        <span class="text-danger" asp-validation-for="Media"></span>
+                        <div>
+                            <small id="fileHelp" class="form-text text-muted">Sadece fotoğraf veya video dosyaları
+                                seçilebilir.</small>
+                        </div>
+
+                    </div>
+                    <div id="selectedFileContainer" class="py-4"></div>
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                        <button type="submit" class="btn btn-primary">Gönderi Oluştur</button>
+                    </div>
+
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    function showSelectedImage(file) {
+        var container = document.getElementById('selectedFileContainer');
+
+        // Dosyayı bir <img> etiketi içinde göster
+        var imageElement = document.createElement('img');
+        imageElement.src = URL.createObjectURL(file);
+        imageElement.alt = 'Seçilen Resim';
+        imageElement.style.maxWidth = '100%';
+        container.innerHTML = ''; // Önceki içeriği temizle
+        container.appendChild(imageElement);
+    }
+</script>
