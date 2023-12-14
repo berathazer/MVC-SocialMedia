@@ -1,5 +1,9 @@
 @model SocialMedia.Entities.Post
 
+@{
+  
+}
+
 <div class="card ">
 
     <div class="p-2 bg-white d-flex align-items-center justify-content-between gap-2 rounded-top">
@@ -11,7 +15,27 @@
     </div>
     <!-- Gönderi içeriği -->
     <div class="card-body p-0">
-        <img src="https://placekitten.com/1000/1000" alt="Gönderi Resmi" class="img-fluid" width="100%" height="450px">
+        @if (!string.IsNullOrEmpty(Model.MediaURL))
+        {
+            var fileExtension = System.IO.Path.GetExtension(Model.MediaURL).ToLower();
+
+            if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png" || fileExtension == ".gif")
+            {
+                <img src="@("/posts/" + Model.MediaURL)" alt="Gönderi Resmi" class="img-fluid" width="100%" height="450px">
+            }
+            else if (fileExtension == ".mp4" || fileExtension == ".avi" || fileExtension == ".mov")
+            {
+                <video src="@("/posts/" + Model.MediaURL)" controls class="img-fluid" width="100%" height="450px"></video>
+            }
+            else
+            {
+                <p class="text-danger">Desteklenmeyen medya türü.</p>
+            }
+        }
+        else
+        {
+            <img src="https://placekitten.com/1000/1000" alt="Gönderi Resmi" class="img-fluid" width="100%" height="450px">
+        }
     </div>
     <!-- Beğeni ve yorumlar -->
     <div class="card-footer bg-white">

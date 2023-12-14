@@ -10488,11 +10488,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.WebUI\\SocialMedia.WebUI.csproj",
+      "projectUniqueName": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.WebUI\\SocialMedia.WebUI.csproj",
       "projectName": "SocialMedia.WebUI",
-      "projectPath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.WebUI\\SocialMedia.WebUI.csproj",
+      "projectPath": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.WebUI\\SocialMedia.WebUI.csproj",
       "packagesPath": "C:\\Users\\berat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.WebUI\\obj\\",
+      "outputPath": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.WebUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\berat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10509,14 +10509,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Business\\SocialMedia.Business.csproj": {
-              "projectPath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Business\\SocialMedia.Business.csproj"
+            "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Business\\SocialMedia.Business.csproj": {
+              "projectPath": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Business\\SocialMedia.Business.csproj"
             },
-            "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\SocialMedia.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\SocialMedia.DataAccess.csproj"
+            "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\SocialMedia.DataAccess.csproj": {
+              "projectPath": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\SocialMedia.DataAccess.csproj"
             },
-            "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj": {
-              "projectPath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj"
+            "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj": {
+              "projectPath": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj"
             }
           }
         }

@@ -30,12 +30,13 @@ namespace SocialMedia.WebUI.Controllers
                     ViewBag.UserId = serialNumber;
                 }
 
-                
+
 
                 var _posts = db.Posts
                 .Include(p => p.User)
                 .Include(p => p.Likes)
                 .Include(p => p.Comments)
+                .OrderByDescending(p => p.PostDate)
                 .ToList();
                 ViewBag.posts = _posts;
 

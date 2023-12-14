@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kfD1x4f7TAII7uSkgZWOkkuYzYkVuJycr6T1FApbQwvFw4kY7arr6Y4KKZHt+1MaGK4QnVRzHg+FHP6E4JkQsA==",
+  "dgSpecHash": "F7EHTRnTbaqs8oAPgda1EBwjoMErOQmniLPy3SPLglHrD5exjqRMxiU1CvgU/Xf0+fqA/kp2QJG4lq+yNSj/lg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Business\\SocialMedia.Business.csproj",
+  "projectFilePath": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Business\\SocialMedia.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\berat\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\berat\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

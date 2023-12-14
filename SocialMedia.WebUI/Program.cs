@@ -2,7 +2,6 @@ using System.Globalization;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.Extensions.Options;
 using SocialMedia.Business.Abstract;
 using SocialMedia.Business.Concrete;
 
@@ -50,10 +49,16 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         });
 
 
-//Signletons
+//Singleton Repositories
 builder.Services.AddSingleton<IUserRepository, EfUserRepository>();
+builder.Services.AddSingleton<IPostRepository, EfPostRepository>();
+
+//Singleton Services
 builder.Services.AddSingleton<IUserService, UserManager>();
+builder.Services.AddSingleton<IPostService, PostManager>();
 builder.Services.AddScoped<IAuthService, AuthManager>();
+
+
 
 var app = builder.Build();
 

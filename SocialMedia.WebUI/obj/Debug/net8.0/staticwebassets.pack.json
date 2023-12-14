@@ -285,6 +285,14 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.WebUI\\wwwroot\\posts\\108d2476-1d80-49f8-a882-d459ff4f60a1.gif",
+      "PackagePath": "staticwebassets\\posts\\108d2476-1d80-49f8-a882-d459ff4f60a1.gif"
+    },
+    {
+      "Id": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.WebUI\\wwwroot\\posts\\56ba0ab0-6de9-45ea-a871-ff98f3980a42.mp4",
+      "PackagePath": "staticwebassets\\posts\\56ba0ab0-6de9-45ea-a871-ff98f3980a42.mp4"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SocialMedia.WebUI.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

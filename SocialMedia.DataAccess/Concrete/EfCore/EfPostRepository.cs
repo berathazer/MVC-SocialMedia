@@ -11,7 +11,8 @@ namespace SocialMedia.DataAccess.Concrete.EfCore
 
             using (var context = new AppDbContext())
             {
-                await context.Posts.AddAsync(entity);
+                context.Posts.Add(entity);
+                await context.SaveChangesAsync();
                 return true;
             }
         }
