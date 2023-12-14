@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\SocialMedia.DataAccess.csproj": {}
+    "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\SocialMedia.DataAccess.csproj": {}
   },
   "projects": {
-    "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\SocialMedia.DataAccess.csproj": {
+    "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\SocialMedia.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\SocialMedia.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\SocialMedia.DataAccess.csproj",
         "projectName": "SocialMedia.DataAccess",
-        "projectPath": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\SocialMedia.DataAccess.csproj",
+        "projectPath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\SocialMedia.DataAccess.csproj",
         "packagesPath": "C:\\Users\\berat\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\berat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj": {
-                "projectPath": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj"
+              "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj": {
+                "projectPath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj"
               }
             }
           }
@@ -75,14 +75,14 @@
         }
       }
     },
-    "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj": {
+    "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj",
         "projectName": "SocialMedia.Entities",
-        "projectPath": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj",
+        "projectPath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\SocialMedia.Entities.csproj",
         "packagesPath": "C:\\Users\\berat\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\obj\\",
+        "outputPath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\berat\\AppData\\Roaming\\NuGet\\NuGet.Config",

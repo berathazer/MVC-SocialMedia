@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rYt/6rSQVpUZAQC8aTfxnPAZXHwRlSJyHT/MMNqhICQA0r7m+JPCm80SEEFlMnmRWFqIy/Jaq2bYKrk1L3QSpw==",
+  "dgSpecHash": "T17PzQAOuxfjNmmpNDVztZM+px5ojSsNS2ZDjqN2u0GZhQlpBOkbqtpZZRlFge9GGZV7rm+yBBZm3Fmv4B9cNw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.WebUI\\SocialMedia.WebUI.csproj",
+  "projectFilePath": "C:\\Users\\berat\\Desktop\\c# kodlari\\SocialMedia\\SocialMedia.WebUI\\SocialMedia.WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\berat\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\berat\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
